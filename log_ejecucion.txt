@@ -1,0 +1,192 @@
+=== 01_extraccion_api iniciada: 2026-11-22 01:24:39 ===
+Parametros: trimestral 2000-1 a 2025-4 | mensual 2000-1 a 2025-12 | BM 2000-2025
+2026-11-22 01:24:41 | BCRP bcrp_deuda_trimestral.json | HTTP 200 | 104 periodos | 7 series | https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN03432FQ-PN03433FQ-PN03442FQ-PN03443FQ-PN03469FQ-PN03481FQ-PN03484FQ/json/2000-1/2025-4/esp
+2026-11-22 01:24:43 | BCRP bcrp_tipo_cambio_mensual.json | HTTP 200 | 312 periodos | 1 series | https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN01207PM/json/2000-1/2025-12/esp
+2026-11-22 01:24:45 | BM GC.DOD.TOTL.GD.ZS (deuda_gob_central_pbi_bm) | HTTP 200 | 26 filas | 16 con valor | 2006-2021 | https://api.worldbank.org/v2/country/PER/indicator/GC.DOD.TOTL.GD.ZS?format=json&date=2000:2025&per_page=500
+2026-11-22 01:24:46 | BM DT.DOD.DPPG.CD (deuda_externa_ppg_usd_bm) | HTTP 200 | 26 filas | 26 con valor | 2000-2025 | https://api.worldbank.org/v2/country/PER/indicator/DT.DOD.DPPG.CD?format=json&date=2000:2025&per_page=500
+2026-11-22 01:24:48 | BM DT.TDS.DPPG.CD (servicio_deuda_externa_ppg_usd_bm) | HTTP 200 | 26 filas | 26 con valor | 2000-2025 | https://api.worldbank.org/v2/country/PER/indicator/DT.TDS.DPPG.CD?format=json&date=2000:2025&per_page=500
+2026-11-22 01:25:42 | BM GC.XPN.INTP.RV.ZS (intereses_pct_ingresos_bm) | HTTP 200 | 26 filas | 22 con valor | 2000-2021 | https://api.worldbank.org/v2/country/PER/indicator/GC.XPN.INTP.RV.ZS?format=json&date=2000:2025&per_page=500
+=== 01_extraccion_api finalizada: 2026-11-22 01:25:43 ===
+
+=== 01_extraccion_api iniciada: 2026-11-22 01:31:54 ===
+Parametros: trimestral 2000-1 a 2025-4 | mensual 2000-1 a 2025-12 | BM 2000-2025
+2026-11-22 01:31:56 | BCRP bcrp_deuda_trimestral.json | HTTP 200 | 104 periodos | 7 series | https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN03432FQ-PN03433FQ-PN03442FQ-PN03443FQ-PN03469FQ-PN03481FQ-PN03484FQ/json/2000-1/2025-4/esp
+2026-11-22 01:31:58 | BCRP bcrp_tipo_cambio_mensual.json | HTTP 200 | 312 periodos | 1 series | https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN01207PM/json/2000-1/2025-12/esp
+2026-11-22 01:32:00 | BM GC.DOD.TOTL.GD.ZS (deuda_gob_central_pbi_bm) | HTTP 200 | 26 filas | 16 con valor | 2006-2021 | https://api.worldbank.org/v2/country/PER/indicator/GC.DOD.TOTL.GD.ZS?format=json&date=2000:2025&per_page=500
+2026-11-22 01:32:01 | BM DT.DOD.DPPG.CD (deuda_externa_ppg_usd_bm) | HTTP 200 | 26 filas | 26 con valor | 2000-2025 | https://api.worldbank.org/v2/country/PER/indicator/DT.DOD.DPPG.CD?format=json&date=2000:2025&per_page=500
+2026-11-22 01:32:03 | BM DT.TDS.DPPG.CD (servicio_deuda_externa_ppg_usd_bm) | HTTP 200 | 26 filas | 26 con valor | 2000-2025 | https://api.worldbank.org/v2/country/PER/indicator/DT.TDS.DPPG.CD?format=json&date=2000:2025&per_page=500
+2026-11-22 01:32:04 | BM GC.XPN.INTP.RV.ZS (intereses_pct_ingresos_bm) | HTTP 200 | 26 filas | 22 con valor | 2000-2021 | https://api.worldbank.org/v2/country/PER/indicator/GC.XPN.INTP.RV.ZS?format=json&date=2000:2025&per_page=500
+=== 01_extraccion_api finalizada: 2026-11-22 01:32:05 ===
+
+=== 02_scraping_web iniciada: 2026-11-22 01:40:45 ===
+Parametros: boletines desde 2010-03-31 hasta 2025-12-31
+2026-11-22 01:40:46 | robots.txt www.gob.pe | ruta /institucion/mef/informes-publicaciones/tipos/2-boletin | permitido=True
+2026-11-22 01:40:46 | robots.txt www.mef.gob.pe | ruta /contenidos/deuda_publ/documentos/ | permitido=True
+2026-11-22 01:40:47 | robots.txt cdn.www.gob.pe | ruta /uploads/document/file/ | permitido=True
+2026-11-22 01:40:48 | gob.pe listado pagina 1 | HTTP 200 | 163759 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/tipos/2-boletin
+2026-11-22 01:40:50 | gob.pe listado pagina 2 | HTTP 200 | 126025 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/tipos/2-boletin?sheet=2
+2026-11-22 01:40:52 | gob.pe ficha 2024-06-30 | HTTP 200 | 30834 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6567538-boletin-de-deuda-n-65-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-junio-2024
+2026-11-22 01:40:53 | gob.pe ficha 2024-09-30 | HTTP 200 | 30918 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6567539-boletin-de-deuda-n-66-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-setiembre-2024
+2026-11-22 01:40:55 | gob.pe ficha 2024-12-31 | HTTP 200 | 30845 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6709622-boletin-de-deuda-n-67-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-diciembre-2024
+2026-11-22 01:40:57 | gob.pe ficha 2025-03-31 | HTTP 200 | 30704 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6967159-boletin-de-deuda-n-68-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-marzo-2025
+2026-11-22 01:40:59 | gob.pe ficha 2025-06-30 | HTTP 200 | 30704 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7396851-boletin-de-deuda-n-69-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-junio-2025
+2026-11-22 01:41:01 | gob.pe ficha 2025-09-30 | HTTP 200 | 30788 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7468133-boletin-de-deuda-n-70-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-setiembre-2025
+2026-11-22 01:41:02 | gob.pe ficha 2025-12-31 | HTTP 200 | 30844 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7852960-boletin-de-deuda-n-71-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-diciembre-2025
+2026-11-22 01:41:06 | MEF PDF 2010-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032010.pdf
+2026-11-22 01:41:08 | MEF PDF 2010-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062010.pdf
+2026-11-22 01:41:10 | MEF PDF 2010-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092010.pdf
+2026-11-22 01:41:12 | MEF PDF 2010-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122010.pdf
+2026-11-22 01:41:14 | MEF PDF 2011-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032011.pdf
+2026-11-22 01:41:17 | MEF PDF 2011-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062011.pdf
+2026-11-22 01:41:19 | MEF PDF 2011-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092011.pdf
+2026-11-22 01:41:21 | MEF PDF 2011-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122011.pdf
+2026-11-22 01:41:23 | MEF PDF 2012-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032012.pdf
+2026-11-22 01:41:25 | MEF PDF 2012-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062012.pdf
+2026-11-22 01:41:28 | MEF PDF 2012-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092012.pdf
+2026-11-22 01:41:30 | MEF PDF 2012-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122012.pdf
+2026-11-22 01:41:32 | MEF PDF 2013-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032013.pdf
+2026-11-22 01:41:34 | MEF PDF 2013-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062013.pdf
+2026-11-22 01:41:36 | MEF PDF 2013-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092013.pdf
+2026-11-22 01:41:38 | MEF PDF 2013-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122013.pdf
+2026-11-22 01:41:41 | MEF PDF 2014-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032014.pdf
+2026-11-22 01:41:43 | MEF PDF 2014-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062014.pdf
+2026-11-22 01:41:45 | MEF PDF 2014-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092014.pdf
+2026-11-22 01:41:47 | MEF PDF 2014-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122014.pdf
+2026-11-22 01:41:50 | MEF PDF 2015-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032015.pdf
+2026-11-22 01:41:52 | MEF PDF 2015-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062015.pdf
+2026-11-22 01:41:54 | MEF PDF 2015-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092015.pdf
+2026-11-22 01:41:56 | MEF PDF 2015-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122015.pdf
+2026-11-22 01:41:58 | MEF PDF 2016-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032016.pdf
+2026-11-22 01:42:01 | MEF PDF 2016-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062016.pdf
+2026-11-22 01:42:03 | MEF PDF 2016-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092016.pdf
+2026-11-22 01:42:05 | MEF PDF 2016-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122016.pdf
+2026-11-22 01:42:07 | MEF PDF 2017-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032017.pdf
+2026-11-22 01:42:09 | MEF PDF 2017-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062017.pdf
+2026-11-22 01:42:11 | MEF PDF 2017-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092017.pdf
+2026-11-22 01:42:14 | MEF PDF 2017-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122017.pdf
+2026-11-22 01:42:16 | MEF PDF 2018-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032018.pdf
+2026-11-22 01:42:18 | MEF PDF 2018-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062018.pdf
+2026-11-22 01:42:20 | MEF PDF 2018-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092018.pdf
+2026-11-22 01:42:22 | MEF PDF 2018-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122018.pdf
+2026-11-22 01:42:25 | MEF PDF 2019-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032019.pdf
+2026-11-22 01:42:27 | MEF PDF 2019-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062019.pdf
+2026-11-22 01:42:29 | MEF PDF 2019-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092019.pdf
+2026-11-22 01:42:31 | MEF PDF 2019-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122019.pdf
+2026-11-22 01:42:33 | MEF PDF 2020-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032020.pdf
+2026-11-22 01:42:36 | MEF PDF 2020-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062020.pdf
+2026-11-22 01:42:38 | MEF PDF 2020-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092020.pdf
+2026-11-22 01:42:40 | MEF PDF 2020-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122020.pdf
+2026-11-22 01:42:42 | MEF PDF 2021-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032021.pdf
+2026-11-22 01:42:44 | MEF PDF 2021-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062021.pdf
+2026-11-22 01:42:46 | MEF PDF 2021-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092021.pdf
+2026-11-22 01:42:49 | MEF PDF 2021-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122021.pdf
+2026-11-22 01:42:51 | MEF PDF 2022-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032022.pdf
+2026-11-22 01:42:53 | MEF PDF 2022-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062022.pdf
+2026-11-22 01:42:55 | MEF PDF 2022-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092022.pdf
+2026-11-22 01:42:57 | MEF PDF 2022-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122022.pdf
+2026-11-22 01:43:00 | MEF PDF 2023-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032023.pdf
+2026-11-22 01:43:02 | MEF PDF 2023-06-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062023.pdf
+2026-11-22 01:43:04 | MEF PDF 2023-09-30 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092023.pdf
+2026-11-22 01:43:06 | MEF PDF 2023-12-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122023.pdf
+2026-11-22 01:43:07 | MEF PDF 2024-03-31 | HTTP 200 | error: ninguna URL devolvio un PDF | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda64_31032024_esp.pdf
+2026-11-22 01:43:09 | MEF PDF 2024-06-30 | HTTP 200 | descargado | 2532133 bytes | https://cdn.www.gob.pe/uploads/document/file/7774678/6567538-boletin-de-deuda-n-65-al-30-06-2024-esp.pdf?v=1741936299
+2026-11-22 01:43:11 | MEF PDF 2024-09-30 | HTTP 200 | descargado | 515548 bytes | https://cdn.www.gob.pe/uploads/document/file/7774680/6567539-boletin-de-deuda-n-66-al-30-09-2024-esp.pdf?v=1741937071
+2026-11-22 01:43:12 | MEF PDF 2024-12-31 | HTTP 200 | descargado | 709926 bytes | https://cdn.www.gob.pe/uploads/document/file/7980006/6709622-boletin-n-67-al-31-12-2024-espanol.pdf?v=1745531070
+2026-11-22 01:43:14 | MEF PDF 2025-03-31 | HTTP 200 | descargado | 261363 bytes | https://cdn.www.gob.pe/uploads/document/file/8992598/6967159-boletin-n-68-al-31-03-2025-esp.pdf?v=1763056125
+2026-11-22 01:43:16 | MEF PDF 2025-06-30 | HTTP 200 | descargado | 2474502 bytes | https://cdn.www.gob.pe/uploads/document/file/8992558/7396851-boletin-n-69-al-30-06-2025-esp.pdf?v=1763055932
+2026-11-22 01:43:17 | MEF PDF 2025-09-30 | HTTP 200 | descargado | 515623 bytes | https://cdn.www.gob.pe/uploads/document/file/9096280/7468133-boletin-n-70-al-30-09-2025-esp.pdf?v=1764784076
+2026-11-22 01:43:18 | MEF PDF 2025-12-31 | HTTP 200 | descargado | 512867 bytes | https://cdn.www.gob.pe/uploads/document/file/9593735/7852960-boletin-de-deuda-n-71-al-31-12-2025-esp.pdf?v=1773326297
+2026-11-22 01:43:24 | parseo MEF | 7 boletines | 7 completos | datos_crudos/mef_extraccion_pdf_2024200494M.csv
+=== 02_scraping_web finalizada: 2026-11-22 01:43:24 ===
+
+=== 02_scraping_web iniciada: 2026-11-23 01:29:11 ===
+Parametros: boletines desde 2010-03-31 hasta 2025-12-31
+2026-11-23 01:29:12 | robots.txt www.gob.pe | ruta /institucion/mef/informes-publicaciones/tipos/2-boletin | permitido=True
+2026-11-23 01:29:12 | robots.txt www.mef.gob.pe | ruta /contenidos/deuda_publ/documentos/ | permitido=True
+2026-11-23 01:29:13 | robots.txt cdn.www.gob.pe | ruta /uploads/document/file/ | permitido=True
+2026-11-23 01:29:13 | gob.pe listado pagina 1 | HTTP 200 | 164059 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/tipos/2-boletin
+2026-11-23 01:29:15 | gob.pe listado pagina 2 | HTTP 200 | 126325 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/tipos/2-boletin?sheet=2
+2026-11-23 01:29:17 | gob.pe ficha 2024-06-30 | HTTP 200 | 30834 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6567538-boletin-de-deuda-n-65-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-junio-2024
+2026-11-23 01:29:19 | gob.pe ficha 2024-09-30 | HTTP 200 | 30918 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6567539-boletin-de-deuda-n-66-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-setiembre-2024
+2026-11-23 01:29:21 | gob.pe ficha 2024-12-31 | HTTP 200 | 30845 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6709622-boletin-de-deuda-n-67-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-diciembre-2024
+2026-11-23 01:29:22 | gob.pe ficha 2025-03-31 | HTTP 200 | 30704 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/6967159-boletin-de-deuda-n-68-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-marzo-2025
+2026-11-23 01:29:24 | gob.pe ficha 2025-06-30 | HTTP 200 | 30704 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7396851-boletin-de-deuda-n-69-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-junio-2025
+2026-11-23 01:29:26 | gob.pe ficha 2025-09-30 | HTTP 200 | 30788 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7468133-boletin-de-deuda-n-70-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-30-de-setiembre-2025
+2026-11-23 01:29:27 | gob.pe ficha 2025-12-31 | HTTP 200 | 30844 bytes | https://www.gob.pe/institucion/mef/informes-publicaciones/7852960-boletin-de-deuda-n-71-reporte-trimestral-analisis-de-la-deuda-publica-bruta-al-31-de-diciembre-2025
+2026-11-23 01:29:35 | MEF PDF 2010-03-31 | HTTP 200 | descargado | 31877 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032010.pdf
+2026-11-23 01:29:40 | MEF PDF 2010-06-30 | HTTP 200 | bloqueado: desafio antibots (Incapsula) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062010.pdf
+2026-11-23 01:29:40 | MEF PDF 2010-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092010.pdf
+2026-11-23 01:29:40 | MEF PDF 2010-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122010.pdf
+2026-11-23 01:29:40 | MEF PDF 2011-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032011.pdf
+2026-11-23 01:29:40 | MEF PDF 2011-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062011.pdf
+2026-11-23 01:29:40 | MEF PDF 2011-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092011.pdf
+2026-11-23 01:29:40 | MEF PDF 2011-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122011.pdf
+2026-11-23 01:29:40 | MEF PDF 2012-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032012.pdf
+2026-11-23 01:29:40 | MEF PDF 2012-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062012.pdf
+2026-11-23 01:29:40 | MEF PDF 2012-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092012.pdf
+2026-11-23 01:29:40 | MEF PDF 2012-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122012.pdf
+2026-11-23 01:29:40 | MEF PDF 2013-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032013.pdf
+2026-11-23 01:29:40 | MEF PDF 2013-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062013.pdf
+2026-11-23 01:29:40 | MEF PDF 2013-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092013.pdf
+2026-11-23 01:29:40 | MEF PDF 2013-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122013.pdf
+2026-11-23 01:29:40 | MEF PDF 2014-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032014.pdf
+2026-11-23 01:29:40 | MEF PDF 2014-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062014.pdf
+2026-11-23 01:29:40 | MEF PDF 2014-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092014.pdf
+2026-11-23 01:29:40 | MEF PDF 2014-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122014.pdf
+2026-11-23 01:29:40 | MEF PDF 2015-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032015.pdf
+2026-11-23 01:29:40 | MEF PDF 2015-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062015.pdf
+2026-11-23 01:29:40 | MEF PDF 2015-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092015.pdf
+2026-11-23 01:29:40 | MEF PDF 2015-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122015.pdf
+2026-11-23 01:29:40 | MEF PDF 2016-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032016.pdf
+2026-11-23 01:29:40 | MEF PDF 2016-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062016.pdf
+2026-11-23 01:29:40 | MEF PDF 2016-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092016.pdf
+2026-11-23 01:29:40 | MEF PDF 2016-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122016.pdf
+2026-11-23 01:29:40 | MEF PDF 2017-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032017.pdf
+2026-11-23 01:29:40 | MEF PDF 2017-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062017.pdf
+2026-11-23 01:29:40 | MEF PDF 2017-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092017.pdf
+2026-11-23 01:29:40 | MEF PDF 2017-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122017.pdf
+2026-11-23 01:29:40 | MEF PDF 2018-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032018.pdf
+2026-11-23 01:29:40 | MEF PDF 2018-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062018.pdf
+2026-11-23 01:29:40 | MEF PDF 2018-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092018.pdf
+2026-11-23 01:29:40 | MEF PDF 2018-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122018.pdf
+2026-11-23 01:29:40 | MEF PDF 2019-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032019.pdf
+2026-11-23 01:29:40 | MEF PDF 2019-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062019.pdf
+2026-11-23 01:29:40 | MEF PDF 2019-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092019.pdf
+2026-11-23 01:29:40 | MEF PDF 2019-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122019.pdf
+2026-11-23 01:29:40 | MEF PDF 2020-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032020.pdf
+2026-11-23 01:29:40 | MEF PDF 2020-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062020.pdf
+2026-11-23 01:29:40 | MEF PDF 2020-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092020.pdf
+2026-11-23 01:29:40 | MEF PDF 2020-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122020.pdf
+2026-11-23 01:29:40 | MEF PDF 2021-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032021.pdf
+2026-11-23 01:29:40 | MEF PDF 2021-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062021.pdf
+2026-11-23 01:29:40 | MEF PDF 2021-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092021.pdf
+2026-11-23 01:29:40 | MEF PDF 2021-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122021.pdf
+2026-11-23 01:29:40 | MEF PDF 2022-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032022.pdf
+2026-11-23 01:29:40 | MEF PDF 2022-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062022.pdf
+2026-11-23 01:29:40 | MEF PDF 2022-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092022.pdf
+2026-11-23 01:29:40 | MEF PDF 2022-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122022.pdf
+2026-11-23 01:29:40 | MEF PDF 2023-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31032023.pdf
+2026-11-23 01:29:40 | MEF PDF 2023-06-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30062023.pdf
+2026-11-23 01:29:40 | MEF PDF 2023-09-30 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_30092023.pdf
+2026-11-23 01:29:40 | MEF PDF 2023-12-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda8_31122023.pdf
+2026-11-23 01:29:40 | MEF PDF 2024-03-31 | HTTP  | no_intentado: desafio antibots activo (ver incidencias_fuente.md) | 0 bytes | https://www.mef.gob.pe/contenidos/deuda_publ/documentos/Boletin_Deuda64_31032024_esp.pdf
+2026-11-23 01:29:40 | MEF PDF 2024-06-30 | HTTP  | ya_descargado | 2532133 bytes | https://cdn.www.gob.pe/uploads/document/file/7774678/6567538-boletin-de-deuda-n-65-al-30-06-2024-esp.pdf?v=1741936299
+2026-11-23 01:29:40 | MEF PDF 2024-09-30 | HTTP  | ya_descargado | 515548 bytes | https://cdn.www.gob.pe/uploads/document/file/7774680/6567539-boletin-de-deuda-n-66-al-30-09-2024-esp.pdf?v=1741937071
+2026-11-23 01:29:41 | MEF PDF 2024-12-31 | HTTP  | ya_descargado | 709926 bytes | https://cdn.www.gob.pe/uploads/document/file/7980006/6709622-boletin-n-67-al-31-12-2024-espanol.pdf?v=1745531070
+2026-11-23 01:29:41 | MEF PDF 2025-03-31 | HTTP  | ya_descargado | 261363 bytes | https://cdn.www.gob.pe/uploads/document/file/8992598/6967159-boletin-n-68-al-31-03-2025-esp.pdf?v=1763056125
+2026-11-23 01:29:41 | MEF PDF 2025-06-30 | HTTP  | ya_descargado | 2474502 bytes | https://cdn.www.gob.pe/uploads/document/file/8992558/7396851-boletin-n-69-al-30-06-2025-esp.pdf?v=1763055932
+2026-11-23 01:29:42 | MEF PDF 2025-09-30 | HTTP  | ya_descargado | 515623 bytes | https://cdn.www.gob.pe/uploads/document/file/9096280/7468133-boletin-n-70-al-30-09-2025-esp.pdf?v=1764784076
+2026-11-23 01:29:42 | MEF PDF 2025-12-31 | HTTP  | ya_descargado | 512867 bytes | https://cdn.www.gob.pe/uploads/document/file/9593735/7852960-boletin-de-deuda-n-71-al-31-12-2025-esp.pdf?v=1773326297
+2026-11-23 01:29:49 | parseo MEF | 8 boletines | 8 completos | datos_crudos/mef_extraccion_pdf_2024200494M.csv
+=== 02_scraping_web finalizada: 2026-11-23 01:29:49 ===
+
+=== 02_scraping_web iniciada: 2026-11-23 01:38:41 ===
+Parametros: boletines desde 2010-03-31 hasta 2025-12-31
+2026-11-23 01:38:46 | parseo MEF | 8 boletines | 8 completos | datos_crudos/mef_extraccion_pdf_2024200494M.csv
+=== 02_scraping_web (solo parseo) finalizada: 2026-11-23 01:38:46 ===
+
+=== 02_scraping_web iniciada: 2026-11-23 01:44:05 ===
+Parametros: boletines desde 2010-03-31 hasta 2025-12-31
+2026-11-23 01:44:12 | parseo MEF | 8 boletines | 8 completos | datos_crudos/mef_extraccion_pdf_2024200494M.csv
+=== 02_scraping_web (solo parseo) finalizada: 2026-11-23 01:44:12 ===
+
