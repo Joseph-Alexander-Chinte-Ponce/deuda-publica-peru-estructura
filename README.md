@@ -80,4 +80,4 @@ Ninguna fuente requiere clave (ver `.env.example`).
 
 ## Repositorio
 
-Enlace de GitHub: (completar)
+Enlace de GitHub: (https://github.com/Joseph-Alexander-Chinte-Ponce/deuda-publica-peru-estructura)
